@@ -10,7 +10,8 @@ exports.shortenUrl = async (req, res) => {
 
     try {
         await Url.create({ shortId, redirectUrl});
-        res.json({ shortId });
+        // res.json({ shortId });
+        res.render('home', { shortId });
     } catch (error) {
         res.status(500).json({ message : "Internal Server Error"});
     }
